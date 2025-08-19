@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8" />
+    <title>All alchocol!@!</title>
+</head>
+<body>
+    <h1 style="text-align: center;">All alco</h1>
+    <hr>
+    <form method="POST">
+        <input type="text" name="find">
+        <button type="submit">Search</button>
+    </form>
+
+
+
+
+
+    {%for oneDrink in alcoData%}
+    
+    
+    
+    <div class="alco">
+        <h2 style="text-align: center;">{{oneDrink[1]}}</h2>
+        <hr>
+        <img src="{{oneDrink[2]}}" alt="beer">
+        <br>
+        <ul>
+            <li>Voltage: {{oneDrink[3]}}</li>
+            <li>Cena: {{oneDrink[4]}}</li>
+
+        </ul>
+         <a href="/alcohol/{{oneDrink[0]}}"><button class="byBt">BUY</button></a>
+       <br>
+       <form method="POST">
+        <input type="hidden" name="drinkID" value="{{oneDrink[0]}}"> 
+        <button type="submit"> Delette </button>
+       </form>
+    </div>
+    {% endfor %}
+    <hr>
+    <a href="/"><button>Go back</button></a>
+    
+    
+</body>
+</html>

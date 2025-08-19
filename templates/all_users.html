@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>All users</title>
+</head>
+<body>
+    <h1 style="text-align: center;">All DB users</h1>
+
+    
+<table ><tr>
+    <td>ID</td>
+    <td>UserName</td>
+    <td>Password</td>
+    <td>Admin permition</td>
+</tr>
+{%for oneUser in userData%}
+<tr>
+    <td>{{oneUser[0]}}</td>
+    <td>{{oneUser[1]}}</td>
+    <td>{{oneUser[2]}}</td>
+    <td>{{oneUser[3]}}</td>
+</tr></table>
+
+    {% endfor %}
+
+<a href="/"><button>Go back</button></a>
+</body>
+</html>
